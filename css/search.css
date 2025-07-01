@@ -1,0 +1,294 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Section padding utility */
+.section-padding {
+    padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+    .section-padding {
+        padding: 5rem 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-padding {
+        padding: 6rem 2rem;
+    }
+}
+
+/* Search Section */
+.search-section {
+    background: linear-gradient(135deg, #194f94 0%, #0090d0 100%);
+}
+
+.search-container {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+
+/* Header */
+.search-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.search-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .search-title {
+        font-size: 3rem;
+    }
+}
+
+.search-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 512px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Search Form Container */
+.search-form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 1024px) {
+    .search-form-container {
+        padding: 3rem;
+    }
+}
+
+/* Form Grid */
+.search-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .search-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .search-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Form Field */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 500;
+    flex-direction: row-reverse;
+}
+
+.label-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Form Inputs */
+.form-input,
+.form-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    ring: 2px solid rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-select option {
+    color: #374151;
+    background: white;
+}
+
+/* Date input specific styles */
+.form-input[type="date"] {
+    color-scheme: dark;
+}
+
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Advanced Filters */
+.advanced-filters {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.advanced-title {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.advanced-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .advanced-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.advanced-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.advanced-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+}
+
+.advanced-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.advanced-select:focus {
+    outline: none;
+    ring: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.advanced-select option {
+    color: #374151;
+    background: white;
+}
+
+/* Search Button */
+.search-button-container {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.search-button {
+    background: white;
+    color: #194f94;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.125rem;
+    flex-direction: row-reverse;
+}
+
+.search-button:hover {
+    background: #f9fafb;
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Demo Results Section */
+.results-section {
+    padding: 3rem 1rem;
+    background: white;
+    display: none;
+}
+
+.results-section.show {
+    display: block;
+}
+
+.results-container {
+    max-width: 1152px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.results-title {
+    font-size: 2rem;
+    color: #194f94;
+    margin-bottom: 1rem;
+}
+
+.results-content {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px dashed #cbd5e1;
+}
+
+.results-data {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.results-data pre {
+    text-align: right;
+    color: #374151;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
