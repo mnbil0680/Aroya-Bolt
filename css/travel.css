@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 /* Section Padding */
 .section-padding {
     padding: 80px 20px;
@@ -293,7 +292,7 @@
 
 @media (min-width: 1024px) {
     .grid-cols-1 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .text-4xl {
@@ -321,6 +320,6 @@
 }
 
 /* Space Between Items */
-.space-y-2>*+* {
+.space-y-2 > * + * {
     margin-top: 8px;
 }
