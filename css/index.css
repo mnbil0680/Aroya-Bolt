@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    font-family: 'Cairo', sans-serif;
+    font-family: "Cairo", sans-serif;
     direction: rtl;
     line-height: 1.6;
     color: #333;
@@ -68,15 +68,15 @@ body {
     justify-content: space-between;
 }
 
-.space-x-4>*+* {
+.space-x-4 > * + * {
     margin-right: 1rem;
 }
 
-.space-y-2>*+* {
+.space-y-2 > * + * {
     margin-top: 0.5rem;
 }
 
-.space-y-4>*+* {
+.space-y-4 > * + * {
     margin-top: 1rem;
 }
 
@@ -163,7 +163,11 @@ body {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--text-main) 0%, var(--btn-color) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--text-main) 0%,
+        var(--btn-color) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -293,7 +297,6 @@ body {
 /* Navbar Styles */
 .navbar {
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     left: 0;
@@ -345,8 +348,13 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(7, 16, 65, 0.8) 0%, rgba(0, 144, 208, 0.6) 100%),
-        url('https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg') center/cover;
+    background: linear-gradient(
+            135deg,
+            rgba(7, 16, 65, 0.8) 0%,
+            rgba(0, 144, 208, 0.6) 100%
+        ),
+        url("https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg")
+            center/cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -360,7 +368,6 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
