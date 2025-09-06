@@ -27,6 +27,66 @@
         <link rel="stylesheet" href="./css/search.css" />
         <link rel="stylesheet" href="./css/ship.css" />
         <link rel="stylesheet" href="./css/travel.css" />
+
+        <link
+            rel="stylesheet"
+            href="./css/searchBox/cruise-search-form-option-6.css"
+        />
+        <link rel="stylesheet" href="./css/searchBox/font-awesome.min.css" />
+
+        <script src="./js/searchBox/OVExplore.min.js"></script>
+
+        <script>
+            window.OVExplore6 = {
+                /*'OVExplore' name should be match with your tag's search-form-settings property. i.e. <ody-search-form search-form-settings="OVExplore"></ody-search-form> */
+                preferences: {
+                    languageId: "13", // Set your Language Id. Default Value : 1
+                    siteItemId: "1299887", // Replace your SIID here.
+                    sid1: "", // External ref 1
+                    sid2: "", // External ref 2
+                    referrer: "",
+                    showStateNCountryWithPorts: true,
+                    resultWindowType: "_blank", //specifies result window type of results Options: 1._blank 2._self 3._top
+                    cruiseSearchFields: {
+                        // specifies the fields to be displayed on cruise search form, one can move fields from basic to advance and vice versa as per his/her preference */
+                        basic: [
+                            "ship",
+                            "destination",
+                            "sailingdate",
+                            "duration",
+                            //"cruiseline",
+                            //"cruisetypecheckbox",
+                            //"packagetourscheckbox",
+                            //"allpackagescheckbox",
+                            //"allpackagescheckbox",
+                            //"includeinternalcruiselinescheckbox",
+                            //"newwindowcheckbox",
+                        ],
+                        advance: [
+                            "departureport",
+                            //"ship",
+                            "cruisetypecheckbox",
+                            "packagetourscheckbox",
+                            "allpackagescheckbox",
+                            "allpackagescheckbox",
+                            "includeinternalcruiselinescheckbox",
+                            "newwindowcheckbox",
+                        ],
+                    },
+                },
+                siteSettings: {
+                    productType: "cruise",
+                    domain: "book.mycruiseksa.com", // Replace your domain name here.
+                    // theme: "default",
+                    numberOfCols: 4,
+                    themeColor: "#0071a9|#fff|#0071a9|#fff", // specfies primary | secondary| text color | button text color for search form Default value:#0978bd|#8eccf3|#fff|#fff
+                },
+                cruiseWidgetSettings: {
+                    widgetType:
+                        "single" /* To be used to set select dropdown type versions. Default value: multiple, Options: 1.multiple 2.single*/,
+                },
+            };
+        </script>
     </head>
 
     <body>
@@ -208,9 +268,14 @@
                             </div>
 
                             <div class="pt-6">
-                                <button class="btn-primary">
-                                    جولة افتراضية في السفينة
-                                </button>
+                                <a
+                                    href="https://book.mycruiseksa.com/swift/cruise?siid=1299887&SearchCruise=true&CruiseLine=6&Ship=15159&transportId=29
+                                "
+                                >
+                                    <button class="btn-primary">
+                                        احجز الكروز الان
+                                    </button>
+                                </a>
                             </div>
                         </div>
 
@@ -367,7 +432,9 @@
                 <div class="max-w-7xl mx-auto">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl font-bold text-primary mb-6">
-                            <span class="text-gradient">رحلاتنا الشائعة</span>
+                            <span class="text-gradient"
+                                >رحلات نرويجيان كروز</span
+                            >
                         </h2>
                         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                             اختر من بين مجموعة متنوعة من الرحلات البحرية المصممة
@@ -375,14 +442,18 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 gap-8" id="cruises-container">
+                    <div class="grid grid-cols-3 gap-8" id="cruises-container">
                         <!-- Cruise cards will be inserted here by JavaScript -->
                     </div>
 
                     <div class="text-center mt-12">
-                        <button class="btn-secondary text-lg">
-                            عرض جميع الرحلات
-                        </button>
+                        <a
+                            href="https://book.mycruiseksa.com/swift/cruise?siid=1299887&lang=13&destinationtype=Ocean&sortColumn=cruiselinePriority&sortOrder=asc"
+                        >
+                            <button class="btn-secondary text-lg">
+                                عرض جميع الرحلات
+                            </button>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -394,251 +465,26 @@
                     <div class="search-header">
                         <h2 class="search-title">ابحث عن رحلتك المثالية</h2>
                         <p class="search-description">
-                            استخدم محرك البحث المتقدم للعثور على الرحلة البحرية
-                            التي تناسب تفضيلاتك وميزانيتك
+                            استخدم محرك البحث للعثور على الرحلة البحرية التي
+                            تناسب تفضيلاتك وميزانيتك
                         </p>
                     </div>
 
                     <!-- Search Form -->
-                    <div class="search-form-container">
-                        <form id="searchForm">
-                            <!-- Main Search Fields -->
-                            <div class="search-grid">
-                                <!-- Destination -->
-                                <div class="form-field">
-                                    <label class="form-label">
-                                        <svg
-                                            class="label-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                            />
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                            />
-                                        </svg>
-                                        <span>الوجهة</span>
-                                    </label>
-                                    <select
-                                        id="destination"
-                                        class="form-select"
-                                        required
-                                    >
-                                        <option value="">اختر الوجهة</option>
-                                        <option value="dubai">دبي</option>
-                                        <option value="jeddah">جدة</option>
-                                        <option value="doha">الدوحة</option>
-                                        <option value="kuwait">الكويت</option>
-                                        <option value="bahrain">البحرين</option>
-                                        <option value="muscat">مسقط</option>
-                                    </select>
-                                </div>
-
-                                <!-- Departure Date -->
-                                <div class="form-field">
-                                    <label class="form-label">
-                                        <svg
-                                            class="label-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                            />
-                                        </svg>
-                                        <span>تاريخ المغادرة</span>
-                                    </label>
-                                    <input
-                                        type="date"
-                                        id="departure"
-                                        class="form-input"
-                                        required
-                                    />
-                                </div>
-
-                                <!-- Duration -->
-                                <div class="form-field">
-                                    <label class="form-label">
-                                        <svg
-                                            class="label-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                            />
-                                        </svg>
-                                        <span>المدة</span>
-                                    </label>
-                                    <select
-                                        id="duration"
-                                        class="form-select"
-                                        required
-                                    >
-                                        <option value="">اختر المدة</option>
-                                        <option value="3">3 أيام</option>
-                                        <option value="4">4 أيام</option>
-                                        <option value="5">5 أيام</option>
-                                        <option value="7">7 أيام</option>
-                                        <option value="10">10 أيام</option>
-                                        <option value="14">14 يوم</option>
-                                    </select>
-                                </div>
-
-                                <!-- Number of Guests -->
-                                <div class="form-field">
-                                    <label class="form-label">
-                                        <svg
-                                            class="label-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
-                                            />
-                                        </svg>
-                                        <span>عدد المسافرين</span>
-                                    </label>
-                                    <select
-                                        id="guests"
-                                        class="form-select"
-                                        required
-                                    >
-                                        <option value="">عدد المسافرين</option>
-                                        <option value="1">مسافر واحد</option>
-                                        <option value="2">مسافران</option>
-                                        <option value="3">3 مسافرين</option>
-                                        <option value="4">4 مسافرين</option>
-                                        <option value="5+">
-                                            5 مسافرين أو أكثر
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Advanced Filters -->
-                            <div class="advanced-filters">
-                                <h3 class="advanced-title">خيارات متقدمة</h3>
-                                <div class="advanced-grid">
-                                    <!-- Cabin Type -->
-                                    <div class="advanced-field">
-                                        <label class="advanced-label"
-                                            >نوع الكابينة</label
-                                        >
-                                        <select
-                                            id="cabinType"
-                                            class="advanced-select"
-                                        >
-                                            <option value="">
-                                                جميع الأنواع
-                                            </option>
-                                            <option value="interior">
-                                                داخلية
-                                            </option>
-                                            <option value="ocean-view">
-                                                إطلالة بحرية
-                                            </option>
-                                            <option value="balcony">
-                                                شرفة
-                                            </option>
-                                            <option value="suite">جناح</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Budget -->
-                                    <div class="advanced-field">
-                                        <label class="advanced-label"
-                                            >الميزانية</label
-                                        >
-                                        <select
-                                            id="budget"
-                                            class="advanced-select"
-                                        >
-                                            <option value="">
-                                                جميع الأسعار
-                                            </option>
-                                            <option value="budget">
-                                                أقل من 1,500 ريال
-                                            </option>
-                                            <option value="mid">
-                                                1,500 - 3,000 ريال
-                                            </option>
-                                            <option value="luxury">
-                                                أكثر من 3,000 ريال
-                                            </option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Trip Type -->
-                                    <div class="advanced-field">
-                                        <label class="advanced-label"
-                                            >نوع الرحلة</label
-                                        >
-                                        <select
-                                            id="tripType"
-                                            class="advanced-select"
-                                        >
-                                            <option value="">
-                                                جميع الأنواع
-                                            </option>
-                                            <option value="family">
-                                                عائلية
-                                            </option>
-                                            <option value="romantic">
-                                                رومانسية
-                                            </option>
-                                            <option value="adventure">
-                                                مغامرة
-                                            </option>
-                                            <option value="cultural">
-                                                ثقافية
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Search Button -->
-                            <div class="search-button-container">
-                                <button type="submit" class="search-button">
-                                    <svg
-                                        class="search-icon"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                        />
-                                    </svg>
-                                    <span>البحث عن الرحلات</span>
-                                </button>
-                            </div>
-                        </form>
+                    <div
+                        class="tab-content border border-top-0 mb-3 custom-tab-content"
+                        id="nav-tabContent"
+                    >
+                        <div
+                            class="tab-pane fade pt-2 active show"
+                            id="option-six"
+                            role="tabpanel"
+                            aria-labelledby="option-six-tab"
+                        >
+                            <!-- Step 3: Add ody-search-form tag at the palce where you would like to populate searchform. -->
+                            <ody-search-form search-form-settings="OVExplore6">
+                            </ody-search-form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -721,7 +567,7 @@
                     </div>
 
                     <!-- Gallery Grid -->
-                    <div class="grid grid-cols-1 gap-6" id="gallery-grid">
+                    <div class="grid grid-cols-3 gap-6" id="gallery-grid">
                         <!-- Item 1 -->
                         <div
                             class="gallery-item relative group cursor-pointer overflow-hidden rounded-xl shadow-lg"
@@ -1793,5 +1639,8 @@
         <script src="./js/search.js"></script>
         <script src="./js/ship.js"></script>
         <script src="./js/travel.js"></script>
+
+        <script src="./js/searchBox/bootstrap.min.js"></script>
+        <script src="./js/searchBox/v321jquery.min.js"></script>
     </body>
 </html>

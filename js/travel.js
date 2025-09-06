@@ -2,81 +2,36 @@
 const cruises = [
     {
         id: 1,
+        title: "رحلة ساوثبتون الأوروبية",
+        duration: "11 أيام",
+        ship: "أروى المحيط",
+        route: "ساوثبتون(بريطانيا) - اوروبا",
+        departure: "ساوثبتون",
+        arrival: "اوروبا",
+        image: "https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg",
+        highlights: ["برج إيفل", "ساجرادا فاميليا", "الكولوسيوم"],
+    },
+    {
+        id: 2,
         title: "رحلة الخليج الذهبية",
         duration: "7 أيام",
         ship: "أروى الملكية",
         route: "دبي - الدوحة - الكويت",
         departure: "دبي",
         arrival: "دبي",
-        price: "2,500",
-        rating: 4.9,
         image: "https://images.pexels.com/photos/2467287/pexels-photo-2467287.jpeg",
         highlights: ["شواطئ خاصة", "جولات مدينة", "عروض ليلية"],
     },
     {
-        id: 2,
+        id: 3,
         title: "مغامرة البحر الأحمر",
         duration: "5 أيام",
         ship: "أروى الأسطورة",
         route: "جدة - العقبة - شرم الشيخ",
         departure: "جدة",
         arrival: "جدة",
-        price: "1,800",
-        rating: 4.8,
         image: "https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg",
         highlights: ["غوص مع الدلافين", "رحلات صحراوية", "مأكولات محلية"],
-    },
-    {
-        id: 3,
-        title: "جولة الإمارات الساحرة",
-        duration: "4 أيام",
-        ship: "أروى الجوهرة",
-        route: "دبي - أبوظبي - الشارقة",
-        departure: "دبي",
-        arrival: "دبي",
-        price: "1,200",
-        rating: 4.7,
-        image: "https://images.pexels.com/photos/2413613/pexels-photo-2413613.jpeg",
-        highlights: ["برج خليفة", "جامع الشيخ زايد", "أكواريوم دبي"],
-    },
-    {
-        id: 4,
-        title: "رحلة الكنوز الشرقية",
-        duration: "10 أيام",
-        ship: "أروى الملكية",
-        route: "دبي - مسقط - البحرين - الكويت",
-        departure: "دبي",
-        arrival: "دبي",
-        price: "3,500",
-        rating: 5.0,
-        image: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
-        highlights: ["قلاع تاريخية", "أسواق تقليدية", "فنادق فاخرة"],
-    },
-    {
-        id: 5,
-        title: "إجازة العائلة المثالية",
-        duration: "6 أيام",
-        ship: "أروى النجمة",
-        route: "الدوحة - دبي - أبوظبي",
-        departure: "الدوحة",
-        arrival: "الدوحة",
-        price: "2,000",
-        rating: 4.9,
-        image: "https://images.pexels.com/photos/3278364/pexels-photo-3278364.jpeg",
-        highlights: ["ألعاب مائية", "نادي أطفال", "عروض سيرك"],
-    },
-    {
-        id: 6,
-        title: "رحلة شهر العسل الرومانسية",
-        duration: "8 أيام",
-        ship: "أروى الحب",
-        route: "جدة - العقبة - الغردقة - شرم الشيخ",
-        departure: "جدة",
-        arrival: "جدة",
-        price: "4,200",
-        rating: 5.0,
-        image: "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg",
-        highlights: ["عشاء رومانسي", "سبا للأزواج", "جناح ملكي"],
     },
 ];
 
@@ -95,17 +50,8 @@ function createCruiseCard(cruise, index) {
                         <img src="${cruise.image}" alt="رحلة ${
         cruise.title
     }" loading="lazy">
-                        <div class="rating-badge">
-                            <i class="fas fa-star star-filled"></i>
-                            <span class="text-sm font-semibold text-gray-800">${
-                                cruise.rating
-                            }</span>
-                        </div>
-                        <div class="price-badge">
-                            <span class="font-semibold">${
-                                cruise.price
-                            } ريال</span>
-                        </div>
+                        
+                        
                     </div>
 
                     <!-- Content -->
@@ -122,7 +68,7 @@ function createCruiseCard(cruise, index) {
                                 <span class="text-sm">${cruise.route}</span>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-ship"></i>
                                 <span class="text-sm">${cruise.ship}</span>
                             </div>
                         </div>
@@ -134,12 +80,12 @@ function createCruiseCard(cruise, index) {
                                 ${highlightsHTML}
                             </div>
                         </div>
-
-                        <button class="btn-primary" onclick="showDetails(${
-                            cruise.id
-                        })">
+                        <a href="https://book.mycruiseksa.com/swift/cruise?siid=1299887&lang=13&cruiseline=6&transportid=29&ship=15159&sortColumn=cruiselinePriority&sortOrder=asc">
+                        
+                        <button class="btn-primary" >
                             عرض التفاصيل
                         </button>
+                        </a>
                     </div>
                 </div>
             `;
